@@ -1,4 +1,5 @@
 ---
+# 打印提示会加载roles/kubespray-defaults/defaults/main.yml中到默认配置，注意它会被inventory中到group vars覆盖
 - name: Configure defaults
   debug:
     msg: "Check roles/kubespray-defaults/defaults/main.yml"

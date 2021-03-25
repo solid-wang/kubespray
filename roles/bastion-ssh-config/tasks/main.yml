@@ -2,7 +2,9 @@
 - name: set bastion host IP
   set_fact:
     bastion_ip: "{{ hostvars[groups['bastion'][0]]['ansible_host'] | d(hostvars[groups['bastion'][0]]['ansible_ssh_host']) }}"
+  # 委派到此host执行
   delegate_to: localhost
+  # 在本地执行playbook
   connection: local
 
 # As we are actually running on localhost, the ansible_ssh_user is your local user when you try to use it directly
